@@ -35,7 +35,6 @@ jobs:
     rollback:
         needs: build
         runs-on: ubuntu-latest
-        needs: build
         if: ${{ needs.build.outputs.build_status != 'success' }}    
         steps:      
           - name: Rollback                                     
