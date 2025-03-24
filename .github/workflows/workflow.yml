@@ -22,6 +22,7 @@ jobs:
               id: build
               run: |
                 echo "Building"
+                echo ${{inputs.result}}
                 echo "variable=${{inputs.result}}" >> "$GITHUB_OUTPUT"
 
     deploy:
