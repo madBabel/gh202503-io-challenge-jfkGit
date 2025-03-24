@@ -22,7 +22,7 @@ jobs:
               id: build
               run: |
                 echo "Building"
-                echo ${{inputs.result}}
+                echo "valor=${{inputs.result}}"
                 echo "variable=${{inputs.result}}" >> "$GITHUB_OUTPUT"
 
     deploy:
@@ -41,4 +41,5 @@ jobs:
           - name: Rollback                                     
             run: |
               echo "Rollback"
+              echo "valor: ${{ needs.build.outputs.build_status}}"
               exit 1
